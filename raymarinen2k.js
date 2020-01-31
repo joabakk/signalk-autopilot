@@ -66,7 +66,7 @@ module.exports = function(app) {
                                 default_src)
         app.emit('nmea2000out', msg)
       }, 1000))
-      
+
       timers.push(setInterval(() => {
         const msg = util.format(keep_alive2, (new Date()).toISOString(),
                                 default_src)
@@ -122,7 +122,7 @@ module.exports = function(app) {
       var new_value = Math.trunc(degsToRad(value) * 10000)
       var msg = util.format(command_format, (new Date()).toISOString(), default_src,
                             autopilot_dst, padd((new_value & 0xff).toString(16), 2), padd(((new_value >> 8) & 0xff).toString(16), 2))
-      
+
       sendN2k([msg])
       return SUCCESS_RES
     }
@@ -158,7 +158,7 @@ module.exports = function(app) {
 
   pilot.putTack = (context, path, value, cb)  => {
     var state = app.getSelfPath(state_path)
-    
+
     if ( state !== 'wind' ) {
       return { message: 'Autopilot not in wind vane mode', ...FAILURE_RES }
     } else {
@@ -169,7 +169,7 @@ module.exports = function(app) {
 
   pilot.putAdvanceWaypoint = (context, path, value, cb)  => {
     var state = app.getSelfPath(state_path)
-    
+
     if ( state !== 'route' ) {
       return { message: 'Autopilot not in track mode', ...FAILURE_RES }
     } else {
@@ -212,7 +212,7 @@ module.exports = function(app) {
       description = `Discovered an EV-1 with id ${discovered}`
       app.debug(description)
     }
-      
+
     return {
       deviceid: {
         type: "string",
@@ -245,7 +245,7 @@ function changeHeading(app, deviceid, command_json)
   var new_value
   var command_format
   var n2k_msgs
-  
+
   app.debug("changeHeading: " + state + " " + ammount)
   if ( state == "auto" )
   {
@@ -257,7 +257,7 @@ function changeHeading(app, deviceid, command_json)
     } else if ( new_value > 360 ) {
       new_value = new_value - 360
     }
-    
+
     app.debug(`current heading: ${radsToDeg(current)} new value: ${new_value}`)
 
     command_format = heading_command
@@ -266,7 +266,7 @@ function changeHeading(app, deviceid, command_json)
   {
     var current = app.getSelfPath(target_wind_path)
     new_value = radsToDeg(current) + ammount
-    
+
     if ( new_value < 0 )
       new_value = 360 + new_value
     else if ( new_value > 360 )
@@ -335,4 +335,3 @@ function radsToDeg(radians) {
 function degsToRad(degrees) {
   return degrees * (Math.PI/180.0);
 }
-
