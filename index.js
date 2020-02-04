@@ -107,9 +107,8 @@ module.exports = function(app) {
           ],
           enumNames: [
             'Raymarine NMEA2000',
-            'Raymarine Seatalk 1',
-            /*
-              'Generic NMEA2000',
+            'Raymarine Seatalk 1'
+            /*  'Generic NMEA2000',
               'NMEA 0183'
             */
           ],
