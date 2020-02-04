@@ -1,4 +1,5 @@
-How to use WilhelmSK-SignalK-TinyNMEAUSB “tiny” in Raymarine Seatalk1 “ST1” Networks for remote autopilot control?
+<b>How to use WilhelmSK-SignalK-TinyNMEAUSB “tiny” in Raymarine Seatalk1 “ST1” Networks for remote autopilot control?</b><br>
+<i>By Sancan</i>
 1.   You will need
 ⁃     SignalK server ( tested with RPi 3B, SignalK server 1.30) with two plugins (SignalK-NMEA0183 and Autopilot) installed and activated
 ⁃     TinyNMEA-USB converter
@@ -29,7 +30,9 @@ That is just a trial and test for fun, nothing can replace good seamanship and i
 When this document prepared limited sea trials has been made.
 Thanks:
 Many thanks to SignalK developers, contributors and users; Wilhelm SK developer and TinyNMEA-USB developer for this fun.
+<br>
 Links:
+<br>
 http://signalk.org
 https://www.wilhelmsk.com
 https://www.gadgetpool.eu
