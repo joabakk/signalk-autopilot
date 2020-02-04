@@ -24,7 +24,7 @@ const advance = "steering.autopilot.actions.advanceWaypoint"
 
 const types  = {
   raymarineN2K: require('./raymarinen2k'),
-  raymarineST: undefined,
+  raymarineST: require('./raymarinenst'),
   nmea2000: undefined,
   nmea0183: undefined
 }
@@ -99,8 +99,7 @@ module.exports = function(app) {
           title: 'Autopilot Type',
           enum: [
             'raymarineN2K',
-            'raymarineST',
-            /*
+            'raymarineST'/*,
               'nmea2000',
               'nmea0183'
             */
