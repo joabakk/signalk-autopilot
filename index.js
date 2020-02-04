@@ -24,7 +24,7 @@ const advance = "steering.autopilot.actions.advanceWaypoint"
 
 const types  = {
   raymarineN2K: require('./raymarinen2k'),
-  raymarineST: require('./raymarinenst'),
+  raymarineST: require('./raymarinest'),
   nmea2000: undefined,
   nmea0183: undefined
 }
