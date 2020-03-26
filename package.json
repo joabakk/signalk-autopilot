@@ -15,7 +15,8 @@
   "author": "scott@scottbender.net",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@signalk/github-create-release": "^1.0.1"
